@@ -1,0 +1,4 @@
+configparser
+python-telegram-bot
+requests
+python-dotenv
