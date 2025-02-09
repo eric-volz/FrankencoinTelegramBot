@@ -1,4 +1,4 @@
-name: Publish Docker Image To GitHub Container Registry
+name: Publish to GitHub CR
 
 on:
   push:
