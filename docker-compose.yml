@@ -9,6 +9,7 @@ services:
     command: python3 ./bot/app.py
 
   watchtower:
+    container_name: frankencoin-telegram-bot-watchtower
     image: containrrr/watchtower
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
