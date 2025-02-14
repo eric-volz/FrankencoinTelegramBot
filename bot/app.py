@@ -19,5 +19,6 @@ logger.info("Initialized config dependencies...")
 
 # Init and start FrankencoinTelegramBot
 from bot.frankencoin_telegram_bot import FrankencoinTelegramBot
+logger.info("Starting telegram bot...")
 bot = FrankencoinTelegramBot(os.environ.get("TELEGRAM_TOKEN"))
 bot.run()
