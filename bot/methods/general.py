@@ -41,7 +41,7 @@ class GeneralMethods:
             "🚀 This function will be available soon!"
         )
 
-        await Utils.send_msg(update, [message], None, True)
+        await Utils.send_msg(update, [message], None, False)
 
     @staticmethod
     async def unknown_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
