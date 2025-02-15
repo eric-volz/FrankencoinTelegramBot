@@ -1,6 +1,8 @@
+import os
 from telegram import Update
 from telegram.ext import ContextTypes
 
+from bot import bot_path
 from bot.logger import logger
 from bot.buttons import MAIN_MARKUP
 from bot.methods.utils import Utils
@@ -14,18 +16,17 @@ class GeneralMethods:
         logger.info(f"Start from {update.message.from_user.username}")
 
         message = (
-            "🎉 Welcome to Frankencoin Bot\\! 🤖 \n\n"
+            "🎉 Welcome to Frankencoin Bot! 🤖 \n\n"
             "🏦 Your gateway to the Frankencoin protocol: \n"
             "📊 Monitor positions \n"
             "💰 Check rates \n"
             "🔔 Get notifications \n\n"
             
             "Need help? Type /help 💡 \n\n"
-            "Let's get started\\! 🚀"
+            "Let's get started! 🚀"
         )
 
-        # Option 1: Send image from local file
-        with open('../media/frankencoin_telegram_bot_logo_black.png', 'rb') as photo:
+        with open(bot_path + '/media/frankencoin_telegram_bot_logo_black.png', 'rb') as photo:
             await update.message.reply_photo(
                 photo=photo,
                 caption=message,
@@ -37,7 +38,7 @@ class GeneralMethods:
         logger.info(f"Unknown command from {update.message.from_user.username}: {update.message.text}")
 
         message = (
-            "🚀 This function will be available soon\\!"
+            "🚀 This function will be available soon!"
         )
 
         await Utils.send_msg(update, [message], None, True)
@@ -52,4 +53,4 @@ class GeneralMethods:
             "Or use the menu below 👇"
         )
 
-        await Utils.send_msg(update, [message], None, True)
+        await Utils.send_msg(update, [message], None, False)

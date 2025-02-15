@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   frankencoin-telegram-bot:
     container_name: frankencoin-telegram-bot
