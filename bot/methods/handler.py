@@ -33,6 +33,15 @@ class Handler:
             await Utils.send_msg(update, ["➡️ Prices"], PRICES_MARKUP)
             context.user_data['back_markup'].append(MAIN_MARKUP)
 
+        elif update.message.text == ALERTS_BUTTON:
+            await GeneralMethods.coming_soon(update, context)
+
+        elif update.message.text == STATISTICS_BUTTON:
+            await GeneralMethods.coming_soon(update, context)
+
+        elif update.message.text == SETTINGS_BUTTON:
+            await GeneralMethods.coming_soon(update, context)
+
         # Handle method calls
         elif update.message.text == ZCHF_FPS_BUTTON:
             await PricesMethods.zchf_fps(update, context)
