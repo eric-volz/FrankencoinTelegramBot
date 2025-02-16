@@ -53,4 +53,4 @@ class GeneralMethods:
             "Or use the menu below 👇"
         )
 
-        await Utils.send_msg(update, [message], None, False)
+        await Utils.send_msg(update, [message], MAIN_MARKUP, False)
