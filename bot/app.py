@@ -17,6 +17,22 @@ load_dotenv(verbose=True)
 
 logger.info("Initialized config dependencies...")
 
+# Init UniswapV3 Pools
+from adapters.blockchain import UniswapV3Wrapper
+urls_and_address: list = []
+for rpc_name, rpc_urls in config.get_section("RPC_ADDRESSES").items():
+    # ZCHF Pools
+    for network_identifier, address in config.get_section("ZCHF_UNISWAP_V3_POOLS").items():
+        if rpc_name == network_identifier:
+            urls_and_address.append((rpc_urls, address))
+    # FPS Pools
+    for network_identifier, address in config.get_section("FPS_UNISWAP_V3_POOLS").items():
+        if rpc_name == network_identifier:
+            urls_and_address.append((rpc_urls, address))
+
+UniswapV3Wrapper.initialize(urls_and_address)
+logger.info("Initialized uniswap v3 pools...")
+
 # Init and start FrankencoinTelegramBot
 from bot.frankencoin_telegram_bot import FrankencoinTelegramBot
 logger.info("Starting telegram bot...")

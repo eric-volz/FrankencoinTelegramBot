@@ -49,5 +49,11 @@ class Handler:
         elif update.message.text == COLLATERAL_BUTTON:
             await PricesMethods.collateral(update, context)
 
+        elif update.message.text == DEX_ZCHF_BUTTON:
+            await PricesMethods.dex_zchf(update, context)
+
+        elif update.message.text == DEX_FPS_BUTTON:
+            await PricesMethods.dex_fps(update, context)
+
         else:
             await GeneralMethods.unknown_command(update, context)
