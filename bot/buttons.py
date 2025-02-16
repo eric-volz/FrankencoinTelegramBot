@@ -21,12 +21,15 @@ MAIN_MARKUP = ReplyKeyboardMarkup(
 
 """ PRICES """
 
-ZCHF_FPS_BUTTON = "ZCHF / FPS"
-COLLATERAL_BUTTON = "Collateral"
+ZCHF_FPS_BUTTON = "ZCHF | FPS Mainnet"
+COLLATERAL_BUTTON = "Collateral Oracles"
+DEX_ZCHF_BUTTON = "DEX ZCHF"
+DEX_FPS_BUTTON = "DEX FPS"
 
 PRICES_MARKUP = ReplyKeyboardMarkup(
     [
         [KeyboardButton(ZCHF_FPS_BUTTON), KeyboardButton(COLLATERAL_BUTTON)],
+        [KeyboardButton(DEX_ZCHF_BUTTON), KeyboardButton(DEX_FPS_BUTTON)],
         [KeyboardButton(BACK_BUTTON)]
     ],
     resize_keyboard=True

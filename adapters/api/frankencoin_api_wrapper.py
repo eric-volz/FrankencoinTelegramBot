@@ -1,4 +1,4 @@
-from adapters.frankencoin_api import FrankenCoinAPI
+from adapters.api.frankencoin_api import FrankenCoinAPI
 
 
 class FrankencoinAPIWrapper:
